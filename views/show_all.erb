@@ -1,13 +1,30 @@
-<h2>Show All Records in Table</h2>
+<h2>Show all records in <%= "#{params[:table_name]}" %> table</h2>
 
-<% @results.each do |x| %>
-     <h4><%= x["description"] %></h4>
-     <ul>
-     <li> <%= "ID - #{x["id"]}" %> </li>
-     <li> <%= "Serial Number - #{x["serial_number"]}" %> </li>
-     <li> <%= "Quantity - #{x["quantity"]}" %> </li>
-     <li> <%= "Cost - $#{x["cost"]}" %> </li>
-     <li> <%= "Location ID - #{x["location_id"]}" %> </li>
-     <li> <%= "Category ID - #{x["category_id"]}" %> </li>
-     </ul>
+<% if params[:table_name] == "products" %>
+  <% @results.each do |x| %>
+    <h4><%= x.description %></h4>
+    <ul>
+    <li> <%= "Serial Number - #{x.serial_number}" %> </li>
+    <li> <%= "Quantity - #{x.quantity}" %> </li>
+    <li> <%= "Cost - $#{x.cost}" %> </li>
+    <li> <%= "Location ID - #{x.location_id}" %> </li>
+    <li> <%= "Category ID - #{x.category_id}" %> </li>
+    </ul>
+  <% end %>
+<% elsif params[:table_name] == "locations" %>
+  <% @results.each do |x| %>
+    <h4><%= x.city %></h4>
+    <ul> 
+    <li> <%= "ID - #{x.id}" %> </li>
+    </ul>
+  <% end %>
+<% elsif params[:table_name] == "categories" %>
+  <% @results.each do |x| %>
+    <h4><%= x.name %></h4>
+    <ul>
+    <li> <%= "ID - #{x.id}" %></li>
+    </ul>
+  <% end %>
 <% end %>
+
+<p><a href="/" title="To homepage">Click here to return to the main homepage.</a></p>
