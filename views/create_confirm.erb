@@ -1,6 +1,19 @@
 <h2>Success!!</h2>
 
 
-<p>New Product: <strong><%= params[:description] %></strong> has been added to the database!</p>
+<p>New Product:</p> 
+<ul>
+<li><strong><%= "ID - #{@a.id}" %></strong></li> 
+<li><strong><%= "Serial Number - #{@a.serial_number}" %></strong></li> 
+<li><strong><%= "Title - #{@a.description}" %></strong></li> 
+<li><strong><%= "Quantity - #{@a.quantity}" %></strong></li> 
+<li><strong><%= "Cost - $#{@a.cost}" %></strong></li> 
+<li><strong><%= "Location ID - #{@a.location_id}" %></strong></li> 
+<li><strong><%= "Category ID - #{@a.category_id}" %></strong></li>
+</ul>
+
+<p>This product has been entered into the database.</p>
+
+<p><a href="/" title="To homepage">Click here to return to the main homepage.</a></p>
 
 

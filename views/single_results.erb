@@ -1,6 +1,12 @@
 <h2>Individual Product Record</h2>
 
-<% @single_show.each do |x, y| %>
-    <%= "#{x}- #{y}" %><p></p>
-<% end %>
-
+<%= @single_show.description %>
+    <ul>
+    <li> <%= "Serial Number - #{@single_show.serial_number}" %> </li>
+    <li> <%= "Quantity - #{@single_show.quantity}" %> </li>
+    <li> <%= "Cost - $#{@single_show.cost}" %> </li>
+    <li> <%= "Location ID - #{@single_show.location_id}" %> </li>
+    <li> <%= "Category ID - #{@single_show.category_id}" %> </li>
+    </ul>
+    
+<p><a href="/" title="To homepage">Click here to return to the main homepage.</a></p>

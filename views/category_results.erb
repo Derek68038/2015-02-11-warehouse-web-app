@@ -1,6 +1,6 @@
-<h2>Products in a Given Location</h2>
+<h2>Products in a Given Category</h2>
 
-<% @location_show.each do |x| %>
+<% @category_show.each do |x| %>
     <h4> <%= x.description %> </h4>  
     <ul>
     <li> <%= "Serial Number - #{x.serial_number}" %> </li>
@@ -10,5 +10,5 @@
     <li> <%= "Category ID - #{x.category_id}" %> </li>
     </ul>
 <% end %>
- 
+
 <p><a href="/" title="To homepage">Click here to return to the main homepage.</a></p>
