@@ -18,8 +18,8 @@ get "/create" do
 end
 
 get "/create_confirm" do
-  a = Product.new(params)
-  a.insert("products")
+  @a = Product.new(params)
+  @a.insert("products")
   erb :create_confirm  
 end
 
@@ -41,12 +41,21 @@ get "/location_results" do
   erb :location_results
 end
 
+get "/category" do
+  erb :category
+end
+
+get "/category_results" do
+  @category_show = Product.fetch_by("category_id" => params[:category_id])
+  erb :category_results
+end
+
 get "/single" do
   erb :single
 end
 
-get"/single_results" do
-  @single_show = Product.find(params[:table_name], params[:record_id])
+get "/single_results" do
+  @single_show = Product.find(params[:record_id])
   erb :single_results
 end
 
@@ -54,8 +63,16 @@ get "/edit" do
   erb :edit
 end
 
+get"/edit_results" do
+  erb :edit_results
+end
+
 get "/transfer" do
   erb :transfer
+end
+
+get "/transfer_results" do
+  erb :transfer_results
 end
 
 get "/delete" do
@@ -63,6 +80,6 @@ get "/delete" do
 end
 
 get "/confirm_delete" do
-  Product.delete(params[:id])
+  @delete = Product.delete(params[:id])
   erb :confirm_delete
 end
