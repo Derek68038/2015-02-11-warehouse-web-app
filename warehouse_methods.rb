@@ -20,7 +20,14 @@ module WarehouseMethods
     # None
     
     def all(table_name)
-      DATABASE.execute("SELECT * FROM #{table_name}")
+      results = DATABASE.execute("SELECT * FROM #{table_name}")
+      
+      results_as_objects = []
+
+      results.each do |r|
+        results_as_objects << self.new(r)
+      end
+      results_as_objects
     end
     
     # Public: .find
@@ -35,11 +42,11 @@ module WarehouseMethods
     # State Changes:
     # None
     
-    def find(table_name, record_id) 
-      results = DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
+    def find(record_id) 
+      results = DATABASE.execute("SELECT * FROM products WHERE id = #{record_id}")
       record_details = results[0] # hash of the record's details.
       record_details
-      #self.new(record_details)
+      self.new(record_details)
     end
       
     # Public: .delete
