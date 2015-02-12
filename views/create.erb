@@ -1,0 +1,29 @@
+<h2>Create a New Product Record</h2>
+
+<form action="/create_confirm">
+  <p>Please enter the following information.</p>
+  <div>
+  <p>Serial Number:     <input type="number" name="serial_number"></p>
+  
+  <p>Description:       <input type="text" name="description"></p>
+  
+  <p>Quantity:          <input type="number" name="quantity"></p>
+  
+  <p>Cost:              <input type="number" name="cost"></p>
+  
+  <p>Location ID:       <select name="location_id">
+                        <option value="Blank"></option>
+                        <option value="1">Omaha - HQ</option>
+                        <option value="2">Austin</option>
+                        <option value="3">Kansas City</option>
+                        </select></p>
+  
+  <p>Category ID:       <select name="category_id">
+                        <option value="Blank"></option>
+                        <option value="1">Books</option>
+                        <option value="2">Movies</option>
+                        <option value="3">Misc</option>
+                        </select></p></div>
+  </div>
+  <p><input type="submit"></p>
+</form>

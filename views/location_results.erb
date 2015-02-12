@@ -1,0 +1,12 @@
+<h2>Show All Products in a Given Location</h2>
+
+<% @location_show.each do |x| %>
+    <h4> <%= x.description %> </h4>  
+    <ul>
+    <li> <%= "Serial Number - #{x.serial_number}" %> </li>
+    <li> <%= "Quantity - #{x.quantity}" %> </li>
+    <li> <%= "Cost - $#{x.cost}" %> </li>
+    <li> <%= "Location ID - #{x.location_id}" %> </li>
+    <li> <%= "Category ID - #{x.category_id}" %> </li>
+    </ul>
+<% end %>
