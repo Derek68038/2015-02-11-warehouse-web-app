@@ -4,12 +4,13 @@ require 'minitest/autorun'
 require "sqlite3"
 
 DATABASE = SQLite3::Database.new("warehouse_test.db")
-require_relative "warehouse_setup.rb"
 
-require_relative 'product.rb'
-require_relative 'location.rb'
-require_relative 'category.rb'
-require_relative 'warehouse_methods.rb'
+require_relative '../database/warehouse_setup.rb'
+require_relative '../database/warehouse_methods.rb'
+require_relative '../models/product.rb'
+require_relative '../models/location.rb'
+require_relative '../models/category.rb'
+
 
 class WarehouseTest < Minitest::Test
   
@@ -76,23 +77,15 @@ class WarehouseTest < Minitest::Test
   end
   
   def test_find_method
-    location = Location.new({"city" => "Omaha"})
-    category = Category.new({"name" => "Book"})
     product = Product.new({"serial_number" => 1, "description" => "Hello", 
                             "quantity" => 5, "cost" => 10, "location_id" => 1,
                             "category_id" => 3})
    
-    location.insert("locations")
-    category.insert("categories")
     product.insert("products")
     
-    results1 = Product.find("products", 1)
-    results2 = Location.find("locations", 1)
-    results3 = Category.find("categories", 1) 
-    
-    assert_equal(10, results1.cost)
-    assert_equal("Omaha", results2.city)
-    assert_equal("Book", results3.name)                        
+    results1 = Product.find(1)
+
+    assert_equal(10, results1.cost)                 
   end
   
   def test_delete_method
@@ -107,7 +100,7 @@ class WarehouseTest < Minitest::Test
     product1.insert("products")
     product2.insert("products")
     
-    Product.delete("products", 1)
+    Product.delete(1)
     
     assert_equal(1, Product.all("products").length)
   end
