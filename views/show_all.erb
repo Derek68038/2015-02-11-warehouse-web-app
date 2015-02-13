@@ -1,7 +1,7 @@
 <h2>Show all records in <%= "#{params[:table_name]}" %> table</h2>
 
 <% if params[:table_name] == "products" %>
-  <% @results.each do |x| %>
+  <% @results1.each do |x| %>
     <h4><%= x.description %></h4>
     <ul>
     <li> <%= "Serial Number - #{x.serial_number}" %> </li>
@@ -11,19 +11,15 @@
     <li> <%= "Category ID - #{x.category_id}" %> </li>
     </ul>
   <% end %>
+
 <% elsif params[:table_name] == "locations" %>
-  <% @results.each do |x| %>
+  <% @results2.each do |x| %>
     <h4><%= x.city %></h4>
-    <ul> 
-    <li> <%= "ID - #{x.id}" %> </li>
-    </ul>
   <% end %>
+
 <% elsif params[:table_name] == "categories" %>
-  <% @results.each do |x| %>
+  <% @results3.each do |x| %>
     <h4><%= x.name %></h4>
-    <ul>
-    <li> <%= "ID - #{x.id}" %></li>
-    </ul>
   <% end %>
 <% end %>
 
