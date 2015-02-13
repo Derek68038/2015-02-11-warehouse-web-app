@@ -86,7 +86,6 @@ class WarehouseTest < Minitest::Test
     results1 = Product.find(1)
 
     assert_equal(10, results1.cost)                 
-  end
   
   def test_delete_method
     product1 = Product.new({"serial_number" => 1, "description" => "Hello", 

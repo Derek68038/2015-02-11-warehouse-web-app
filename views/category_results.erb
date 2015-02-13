@@ -1,7 +1,7 @@
 <h2>Products in a Given Category</h2>
 
 <% @category_show.each do |x| %>
-    <h4> <%= x.description %> </h4>  
+    <h3> <%= x.description %> </h4>  
     <ul>
     <li> <%= "Serial Number - #{x.serial_number}" %> </li>
     <li> <%= "Quantity - #{x.quantity}" %> </li>

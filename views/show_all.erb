@@ -2,7 +2,7 @@
 
 <% if params[:table_name] == "products" %>
   <% @results1.each do |x| %>
-    <h4><%= x.description %></h4>
+    <h3><%= x.description %></h4>
     <ul>
     <li> <%= "Serial Number - #{x.serial_number}" %> </li>
     <li> <%= "Quantity - #{x.quantity}" %> </li>
@@ -14,12 +14,12 @@
 
 <% elsif params[:table_name] == "locations" %>
   <% @results2.each do |x| %>
-    <h4><%= x.city %></h4>
+    <h3><%= x.city %></h4>
   <% end %>
 
 <% elsif params[:table_name] == "categories" %>
   <% @results3.each do |x| %>
-    <h4><%= x.name %></h4>
+    <h3><%= x.name %></h4>
   <% end %>
 <% end %>
 
