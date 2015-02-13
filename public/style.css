@@ -1,0 +1,32 @@
+p { 
+  text-align:center;
+  font-family: monospace; 
+} 
+
+h1 {
+  font-family: monospace;
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  font-family: monospace;
+  color: black;
+  text-align: center;
+}
+
+h4 {
+  font-family: monospace;
+  color: black;
+  text-align: center;
+}
+
+h5 {
+  font-family: monospace;
+  color: black;
+  text-align: center;
+}
+
+body {
+  background-color:gray ;
+}
