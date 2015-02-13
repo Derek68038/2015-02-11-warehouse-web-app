@@ -28,7 +28,9 @@ get "/all" do
 end
 
 get "/show_all" do 
-  @results = Product.all(params[:table_name])
+  @results1 = Product.all(params[:table_name])
+  @results2 = Location.all(params[:table_name])
+  @results3 = Category.all(params[:table_name])
   erb :show_all
 end
 
