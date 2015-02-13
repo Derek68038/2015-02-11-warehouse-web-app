@@ -1,4 +1,3 @@
-require_relative "database/warehouse_methods"
 # Class: Category
 #
 # Creates new category objects/records for categories table in warehouse_mgr 

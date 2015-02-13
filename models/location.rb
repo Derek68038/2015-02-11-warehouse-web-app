@@ -1,4 +1,3 @@
-require_relative "database/warehouse_methods"
 # Class: Location
 #
 # Creates new location objects/records for locations table in warehouse_mgr 

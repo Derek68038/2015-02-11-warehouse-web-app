@@ -31,7 +31,7 @@ module WarehouseMethods
     end
     
     # Public: .find
-    # Fetch a given record from any table.
+    # Fetch a given record from products table.
     #
     # Parameters:
     # record_id - Integer: The product's ID in the table.

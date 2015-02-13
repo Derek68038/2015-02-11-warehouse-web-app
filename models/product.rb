@@ -1,4 +1,3 @@
-require_relative "database/warehouse_methods"
 #require_relative "instance_methods"
 # Class: Product
 #

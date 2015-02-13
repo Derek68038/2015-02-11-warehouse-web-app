@@ -3,10 +3,11 @@ require "sqlite3"
 
 DATABASE = SQLite3::Database.new("./database/warehouse_mgr.db")
 
-require_relative "models/location.rb"
-require_relative "models/category.rb"
-require_relative "models/product.rb"
-require_relative "database/warehouse_setup.rb"
+require_relative "database/warehouse_methods"
+require_relative "models/location"
+require_relative "models/category"
+require_relative "models/product"
+require_relative "database/warehouse_setup"
 
 get "/" do
   # Find the ERB file in views/welcome.erb and return it.
