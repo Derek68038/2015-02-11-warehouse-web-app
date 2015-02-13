@@ -1,12 +1,12 @@
 require "sinatra"
 require "sqlite3"
 
-DATABASE = SQLite3::Database.new("warehouse_mgr.db")
+DATABASE = SQLite3::Database.new("./database/warehouse_mgr.db")
 
-require_relative "location.rb"
-require_relative "category.rb"
-require_relative "product.rb"
-require_relative "warehouse_setup.rb"
+require_relative "models/location.rb"
+require_relative "models/category.rb"
+require_relative "models/product.rb"
+require_relative "database/warehouse_setup.rb"
 
 get "/" do
   # Find the ERB file in views/welcome.erb and return it.
