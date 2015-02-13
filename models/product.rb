@@ -14,7 +14,7 @@
 # @category_id     - Integer: Category type for product (foreign key).
 #
 # Public Methods:
-# ???
+# .fetch_by
 #
 # Private Methods:
 # insert
@@ -51,7 +51,7 @@ class Product
     @category_id      = options["category_id"]
   end
   
-  # Public .fetch_products_from_location
+  # Public .fetch_by
   # Gets a list of products with a given location id.
   #
   # Parameters:
