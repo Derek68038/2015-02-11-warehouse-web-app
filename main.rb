@@ -1,4 +1,5 @@
-require 'pry'
+require "rubygems"
+require "bundler/setup"
 require "sinatra"
 require "sqlite3"
 
@@ -11,7 +12,6 @@ require_relative "models/product"
 require_relative "database/warehouse_setup"
 
 get "/" do
-  # Find the ERB file in views/welcome.erb and return it.
   erb :homepage
 end
 
@@ -87,4 +87,3 @@ get "/confirm_delete" do
   @delete = Product.delete(params[:id])
   erb :confirm_delete
 end
-binding.pry
