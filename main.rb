@@ -1,3 +1,4 @@
+require 'pry'
 require "sinatra"
 require "sqlite3"
 
@@ -86,3 +87,4 @@ get "/confirm_delete" do
   @delete = Product.delete(params[:id])
   erb :confirm_delete
 end
+binding.pry
